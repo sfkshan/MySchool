@@ -5,21 +5,8 @@
     ini_set('display_errors', TRUE);
     ini_set('display_startup_errors', TRUE);
     
-    include "./Library/testMenu.php"; 
-    include_once "./Library/MySqlEngine.php"; 
-
-    $objDb = new MySQL_Engine();
-    if($objDb->blnGetResultSet("select * from tblStudentDetails;select * from tblMenu")){
-      while ($objDb->blnResultsMoveNextRow()) {
-        echo $objDb->objResultsValue('StudentD_strName');
-      }
-
-      if($objDb->blnMoveNextResultSet()){
-        while ($objDb->blnResultsMoveNextRow()) {
-          echo $objDb->objResultsValue('Menu_strName');
-        }
-      }
-    }
+    // include "./Library/testMenu.php"; 
+    include_once "./BO/Misc/menu.php"; 
 
 ?>
 
@@ -31,26 +18,48 @@
   <!-- Twitter Bootstrap CSS -->
   <link href="asset/css/bootstrap.css" rel="stylesheet" type="text/css" />   
   <link href="asset/css/bootstrap-responsive.css" rel="stylesheet" type="text/css" />
+  <style type="text/css">
+    body, #InnerDiv, .container-fluid, .container
+    {
+        position: relative;
+    }
+    /*  shows the dropdown on hover*/
+    .navbar ul.nav li:hover > ul.dropdown-menu
+    {
+        display: block;
+    }
+    
+    
+    /* before and after */
+    .navbar .nav > li > .dropdown-menu::before, .navbar .nav > li > .dropdown-menu::after
+    {
+        display: none;
+    }
+  </style>
 </head>
 
 <body>
     <!-- =================== Start Dynamic Nav ============================ -->
-    <div class="navbar navbar-inverse">
-      <div class="navbar-inner navbar-inverse">
+    <div class="navbar">
+      <div class="navbar-inner">
         <div class="container">
-          <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+          <a data-target=".nav-collapse" data-toggle="collapse" class="btn btn-navbar">
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </a>
-          <a class="brand" href="#">Title</a>
-          <div class="nav-collapse collapse navbar-responsive-collapse">
+          <!-- <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </a> -->
+          <div id ="menus" class="nav-collapse collapse navbar-responsive-collapse">
             <ul class="nav">
 
             <?php 
-            
+
             getMenuResultSet();
-            generate_menu(0);
+            generateMenu(0);
 
             ?>
 
@@ -62,6 +71,7 @@
         </div>
       </div><!-- /navbar-inner -->
     </div>  
+
     <script src="asset/js/jquery-1.9.1.min.js"></script>
     <script src="asset/js/bootstrap.js" type="text/javascript"></script>
 </body>
