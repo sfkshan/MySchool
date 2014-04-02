@@ -5,7 +5,7 @@
     ini_set('display_errors', TRUE);
     ini_set('display_startup_errors', TRUE);
     
-    // include "./Library/testMenu.php"; 
+    include_once "./Config/constants.php"; 
     include_once "./BO/Misc/menu.php"; 
 
 ?>
@@ -18,27 +18,30 @@
   <!-- Twitter Bootstrap CSS -->
   <link href="asset/css/bootstrap.css" rel="stylesheet" type="text/css" />   
   <link href="asset/css/bootstrap-responsive.css" rel="stylesheet" type="text/css" />
-  <style type="text/css">
-    body, #InnerDiv, .container-fluid, .container
-    {
-        position: relative;
-    }
-    /*  shows the dropdown on hover*/
-    .navbar ul.nav li:hover > ul.dropdown-menu
-    {
-        display: block;
-    }
-    
-    
-    /* before and after */
-    .navbar .nav > li > .dropdown-menu::before, .navbar .nav > li > .dropdown-menu::after
-    {
-        display: none;
-    }
-  </style>
+  <link href="asset/css/main.css" rel="stylesheet" type="text/css" />  
 </head>
 
 <body>
+    <div id="header" style="height: 70px;">
+      <div class="logo" style="width: 250px; float: left">
+          <img alt="" src="asset/img/mySchool_logo.png" style="height: 60px;">
+      </div>
+
+      <div class="fr pr10" style="float: right; margin-top: 25px; text-align: right; margin-right: 10px;">
+        <label id="tdwelcome" class="lblDefault" style="color:#000">Welcome, 
+          <a target="frmContent" id="lnkProfile" title="My Profile" 
+             href="#">shanmugharaj k</a> | 
+
+          <a target="frmContent" id="lnkChangePassword" title="Change Password" 
+             href="#">Change Password</a> |
+
+          <a title="Logout" href="#">Logout</a>
+        </label>
+      </div>
+      <div style="display: none;">
+          <a target="frmContent" id="lnkMyProfile" href="https://bo.bookmyshow.com/MyProfile.aspx">My Profile</a>
+      </div>
+  </div>
     <!-- =================== Start Dynamic Nav ============================ -->
     <div class="navbar">
       <div class="navbar-inner">

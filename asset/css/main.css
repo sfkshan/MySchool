@@ -1,0 +1,43 @@
+.pr10 {
+	font-size: 13px;
+	font-weight: bold;
+	padding-right: 31px;
+	border: 1px solid #CCC;
+	border-radius: 5px 5px 5px 5px;
+	box-shadow: 0 2px 3px #4D4D4D;
+	font-size: 13px;
+	font-weight: bold;
+	padding: 6px 22px;
+	margin-right: 10px;
+}
+
+.lblDefault {
+	font-family: Arial,Helvetica,sans-serif;
+	font-size: 12px;
+	font-weight: bolder;
+	color: #000;
+	text-align: center;
+	background: url(../Images/button_roll.gif);
+}
+
+/***********************************************
+*		  					MENU PART - START              *
+************************************************/
+body, #InnerDiv, .container-fluid, .container {
+	    position: relative;
+}
+
+/*  shows the dropdown on hover*/
+.navbar ul.nav li:hover > ul.dropdown-menu {
+  display: block;
+}
+
+
+/* before and after */
+.navbar .nav > li > .dropdown-menu::before, .navbar .nav > li > .dropdown-menu::after	{
+  display: none;
+}
+
+/***********************************************
+*		  					MENU PART - END             	 *
+************************************************/
