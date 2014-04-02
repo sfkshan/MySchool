@@ -5,7 +5,6 @@
     ini_set('display_errors', TRUE);
     ini_set('display_startup_errors', TRUE);
     
-    // include "./Library/testMenu.php"; 
     include_once "./BO/Misc/menu.php"; 
 
 ?>
@@ -47,12 +46,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
-          </a>
-          <!-- <a class="btn btn-navbar" data-toggle="collapse" data-target=".navbar-responsive-collapse">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a> -->
+          </a>     
           <div id ="menus" class="nav-collapse collapse navbar-responsive-collapse">
             <ul class="nav">
 
@@ -63,7 +57,7 @@
 
             ?>
 
-          <!-- =================== End Dynamic Nav ============================ -->
+      <!-- =================== End Dynamic Nav ============================ -->
 
             </li>
           </ul>
